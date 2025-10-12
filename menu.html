@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonts -->
+    <link rel="icon" type="image/png" href="/images/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./menu.css">
+    <title>Coffee Shop Menu</title>
+</head>
+<body>
+    <div class="container-xl">
+         <header>
+            <!-- navbar -->
+            <nav>
+                <div class="logo">
+                    <a href="/index.html"><img src="/images/logo.png" alt="Coffee Shop Logo"></a>
+                </div>
+                <!-- nav links -->
+                <ul>
+                    <li><a href="/index.html#Favourites-Coffee" class="action-link">Favorite coffee</a></li>
+                    <li><a href="/index.html#About" class="action-link">About</a></li>
+                    <li><a href="/index.html#Mobile-App" class="action-link">Mobile app</a></li>
+                    <li><a href="/index.html#Footer" class="action-link">Contact us</a></li>
+                </ul>
+                <!-- menu button -->
+                <div class="menu_link">
+                    <a href="/menu.html" class="action-link active">Menu <img src="/images/coffee-cup.png" alt=""></a>
+                </div>
+                <!-- burger menu button -->
+                <button class="burger-menu" onclick="toggleMobileNav()" style="display: none;"></button>
+            </nav>
+            <!-- mobile navigation overlay -->
+            <div class="mobile-nav" id="mobileNav">
+                <button class="close-btn" onclick="toggleMobileNav()">&times;</button>
+                <a href="/index.html#Favourites-Coffee" onclick="toggleMobileNav()">Favorite coffee</a>
+                <a href="/index.html#About" onclick="toggleMobileNav()">About</a>
+                <a href="/index.html#Mobile-App" onclick="toggleMobileNav()">Mobile app</a>
+                <a href="#Footer" onclick="toggleMobileNav()">Contact us</a>
+                <a href="/menu.html" class="menu-item active" onclick="toggleMobileNav()">Menu <img src="/images/coffee-cup.png" alt=""></a>
+            </div>
+        </header>
+
+        <main>
+            <!-- main menu section -->
+            <section id="Main">
+                <div class="menu-filter">
+                    <!-- header text -->
+                    <div class="menu-header">
+                        <h2 class="heading-2">Behind each of our cups hides an <span class="accent">amazing surprise</span></h2>
+                    </div>
+                    <!-- filter buttons -->
+                    <div class="menu-buttons">
+                        <button class="menu-btn action-link active">
+                            <span class="icon">
+                                <img src="/images/menuCoffee.png" alt="Coffee">
+                            </span>
+                            <span class="text">Coffee</span>
+                        </button>
+                        <button class="menu-btn action-link">
+                            <span class="icon">
+                                <img src="/images/menu-Tea.png" alt="Tea">
+                            </span>
+                            <span class="text">Tea</span>
+                        </button>
+                        <button class="menu-btn action-link">
+                            <span class="icon">
+                                <img src="/images/menu-Desert.png" alt="Dessert">
+                            </span>
+                            <span class="text">Dessert</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- menu items -->
+                <div class="main-content">
+                    <!-- coffee items -->
+                    <div class="coffee-content" id="coffee-content">
+                        <div class="menu-item irish-coffee" data-modal="irish-coffee">
+                            <img src="/images/coffee-1.jpg" alt="Irish coffee with whiskey and whipped milk">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Irish coffee</h3>
+                                <p class="child-description body-medium">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+                                <p class="child-price heading-3">$7.00</p>
+                            </div>
+                        </div>
+                        <div class="menu-item" data-modal="kahlua-coffee">
+                            <img src="/images/coffee-2.jpg" alt="Kahlua coffee with frothed milk">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Kahlua coffee</h3>
+                                <p class="child-description body-medium">Classic coffee with milk and Kahlua liqueur under a cap of frothed milk</p>
+                                <p class="child-price heading-3">$7.00</p>
+                            </div>
+                        </div>
+                        <div class="menu-item" data-modal="honey-raf">
+                            <img src="/images/coffee-3.jpg" alt="Honey raf espresso with cream">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Honey raf</h3>
+                                <p class="child-description body-medium">Espresso with frothed milk, cream and aromatic honey</p>
+                                <p class="child-price heading-3">$5.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item" data-modal="ice-cappuccino">
+                            <img src="/images/coffee-4.jpg" alt="Ice cappuccino with foam and ice">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Ice cappuccino</h3>
+                                <p class="child-description body-medium">Cappuccino with soft thick foam in summer version with ice</p>
+                                <p class="child-price heading-3">$5.00</p>
+                            </div>
+                        </div>
+                        <div class="menu-item hidden" data-modal="espresso">
+                            <img src="/images/coffee-5.jpg" alt="Classic espresso coffee">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Espresso</h3>
+                                <p class="child-description body-medium">Classic black coffee</p>
+                                <p class="child-price heading-3">$4.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item hidden" data-modal="latte">
+                            <img src="/images/coffee-6.jpg" alt="Latte with steamed milk and foam">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Latte</h3>
+                                <p class="child-description body-medium">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+                                <p class="child-price heading-3">$5.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item hidden" data-modal="latte-macchiato">
+                            <img src="/images/coffee-7.jpg" alt="Latte macchiato with chocolate">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Latte macchiato</h3>
+                                <p class="child-description body-medium">Espresso with frothed milk and chocolate</p>
+                                <p class="child-price heading-3">$5.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item hidden congac-coffee" data-modal="cognac-coffee">
+                            <img src="/images/coffee-8.jpg" alt="Coffee with cognac and whipped cream">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Coffee with cognac</h3>
+                                <p class="child-description body-medium">Fragrant black coffee with cognac and whipped cream</p>
+                                <p class="child-price heading-3">$6.50</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- load more button for coffee -->
+                    <div class="load-more-container" id="coffee-load-more">
+                        <button class="load-more-btn" onclick="loadMore('coffee')">
+                            <img src="/images/refresh.png" alt="Load more">
+                        </button>
+                    </div>
+                    
+                    <!-- tea items -->
+                    <div class="tea-content" id="tea-content" style="display: none;">
+                        <div class="menu-item">
+                            <img src="/images/tea-1.png" alt="Moroccan tea with tangerine and mint">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Moroccan</h3>
+                                <p class="child-description body-medium">Fragrant black tea with the addition of tangerine, cinnamon, honey, lemon and mint</p>
+                                <p class="child-price heading-3">$4.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="/images/tea-2.png" alt="Ginger tea with lemon and honey">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Ginger</h3>
+                                <p class="child-description body-medium">Original black tea with fresh ginger, lemon and honey</p>
+                                <p class="child-price heading-3">$5.00</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="/images/tea-3.png" alt="Cranberry tea with honey">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Cranberry</h3>
+                                <p class="child-description body-medium">Invigorating black tea with cranberry and honey</p>
+                                <p class="child-price heading-3">$5.00</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="/images/tea-4.png" alt="Sea buckthorn tea with thyme and cinnamon">
+                            <div class="menu-item-text ">
+                                <h3 class="heading-3">Sea buckthorn</h3>
+                                <p class="child-description body-medium">Toning sweet black tea with sea buckthorn, fresh thyme and cinnamon</p>
+                                <p class="child-price heading-3">$5.50</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- load more button for tea -->
+                    <div class="load-more-container" id="tea-load-more">
+                        <button class="load-more-btn" onclick="loadMore('tea')">
+                            <img src="/images/refresh.png" alt="Load more">
+                        </button>
+                    </div>
+                    
+                    <!-- dessert items -->
+                    <div class="dessert-content" id="dessert-content" style="display: none;">
+                        <div class="menu-item">
+                            <img src="/images/dessert-1.png" alt="Marble cheesecake with red currant jam">
+                            <div class="menu-item-text">
+                                <h3 class="heading-3">Marble cheesecake</h3>
+                                <p class="child-description body-medium">Philadelphia cheese with lemon zest on a light sponge cake and red currant jam</p>
+                                <p class="child-price heading-3">$3.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="/images/dessert-2.png" alt="Red velvet cake with cream cheese frosting">
+                            <div class="menu-item-text">
+                                <h3 class="heading-3">Red velvet</h3>
+                                <p class="child-description body-medium">Layer cake with cream cheese frosting</p>
+                                <p class="child-price heading-3">$4.00</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="/images/dessert-3.png" alt="Cheesecakes with berries and powdered sugar">
+                            <div class="menu-item-text">
+                                <h3 class="heading-3">Cheesecakes</h3>
+                                <p class="child-description body-medium">Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar</p>
+                                <p class="child-price heading-3">$4.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="/images/dessert-4.png" alt="Creme brulee with wild berries">
+                            <div class="menu-item-text">
+                                <h3 class="heading-3">Creme brulee</h3>
+                                <p class="child-description body-medium">Delicate creamy dessert in a caramel basket with wild berries</p>
+                                <p class="child-price heading-3">$4.00</p>
+                            </div>
+                        </div>
+                        <div class="menu-item hidden">
+                            <img src="/images/dessert-5.png" alt="Pancakes with strawberry jam and fresh strawberries">
+                            <div class="menu-item-text">
+                                <h3 class="heading-3">Pancakes</h3>
+                                <p class="child-description body-medium">Tender pancakes with strawberry jam and fresh strawberries</p>
+                                <p class="child-price heading-3">$4.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item hidden">
+                            <img src="/images/dessert-6.png" alt="Honey cake with delicate custard">
+                            <div class="menu-item-text">
+                                <h3 class="heading-3">Honey cake</h3>
+                                <p class="child-description body-medium">Classic honey cake with delicate custard</p>
+                                <p class="child-price heading-3">$4.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item hidden">
+                            <img src="/images/dessert-7.png" alt="Chocolate cake with nuts and dried apricots">
+                            <div class="menu-item-text">
+                                <h3 class="heading-3">Chocolate cake</h3>
+                                <p class="child-description body-medium">Cake with hot chocolate filling and nuts with dried apricots</p>
+                                <p class="child-price heading-3">$5.50</p>
+                            </div>
+                        </div>
+                        <div class="menu-item hidden">
+                            <img src="/images/dessert-8.png" alt="Black forest cake with cherry jam and chocolate mousse">
+                            <div class="menu-item-text">
+                                <h3 class="heading-3">Black forest</h3>
+                                <p class="child-description body-medium">A combination of thin sponge cake with cherry jam and light chocolate mousse</p>
+                                <p class="child-price heading-3">$6.50</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- load more button for dessert -->
+                    <div class="load-more-container" id="dessert-load-more">
+                        <button class="load-more-btn" onclick="loadMore('dessert')">
+                            <img src="/images/refresh.png" alt="Load more">
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <section id="Footer" class="footer-content">
+                    <div class="footer-left">
+                        <h2 class="heading-2">Sip, Savor, Smile. <span class="accent">It’s coffee time!</span></h2>
+                        <div class="socials">
+                            <!-- Twitter -->
+                            <div class="footer-social twitter">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path
+                                    d="M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                </svg>
+                            </div>
+
+                            <!-- Instagram -->
+                            <div class="footer-social instagram">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path
+                                    d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"
+                                    stroke="currentColor"
+                                />
+                                <path
+                                    d="M17.5 6.51L17.51 6.49889"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                </svg>
+                            </div>
+
+                            <!-- Facebook -->
+                            <div class="footer-social facebook">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path
+                                    d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <h3>Contact us</h3>
+                        <div class="footer-right-info">
+                            <div class="footer-location">
+                                <a href="https://maps.google.com/?q=8558+Green+Rd+LA" class="footer-link">
+                                <img src="/images/pin-alt.png" alt="Location pin icon">
+                                <span>8558 Green Rd., LA</span>
+                                </a>
+                            </div>
+
+                            <div class="footer-phone">
+                                <a href="tel:+16035550123" class="footer-link">
+                                <img src="/images/phone.png" alt="Phone icon">
+                                <span>+1 (603) 555-0123</span>
+                                </a>
+                            </div>
+
+                            <div class="footer-event">
+                                <a href="/contact" class="footer-link">
+                                <img src="/images/clock.png" alt="Clock icon">
+                                <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </footer>
+    </div>
+    
+    <!-- popup modal -->
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <!-- modal image -->
+            <div class="modal-image">
+                <img id="modal-img" src="" alt="">
+            </div>
+            
+            <!-- modal info -->
+            <div class="modal-details">
+                <h3 id="modal-title" class="modal-title burger-link"></h3>
+                <p id="modal-description" class="modal-description body-medium"></p>
+                
+                <!-- size options -->
+                <div class="modal-section">
+                    <h4 class="action-link">Size</h4>
+                    <div class="modal-options">
+                        <button class="modal-btn selected" data-price="0" data-size="S">200 ml</button>
+                        <button class="modal-btn" data-price="1" data-size="M">300 ml</button>
+                        <button class="modal-btn" data-price="2" data-size="L">400 ml</button>
+                    </div>
+                </div>
+                
+                <!-- additive options -->
+                <div class="modal-section">
+                    <h4 class="action-link">Additives</h4>
+                    <div class="modal-options">
+                        <button class="modal-btn" data-price="0.5" data-number="1">Sugar</button>
+                        <button class="modal-btn" data-price="0.5" data-number="2">Cinnamon</button>
+                        <button class="modal-btn" data-price="0.75" data-number="3">Syrup</button>
+                    </div>
+                </div>
+                
+                <div class="modal-total">
+                    <span class="heading-3">Total:</span>
+                    <span class="heading-3">$<span id="total-price"></span></span>
+                </div>
+                <p class="modal-disclaimer caption">
+                    <span class="info-icon">ℹ</span>
+                    The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+                </p>
+                <button class="modal-close-btn action-link">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- js logics -->
+    <script>
+        const coffeeBtn = document.querySelectorAll('.menu-btn')[0];
+        const teaBtn = document.querySelectorAll('.menu-btn')[1];
+        const dessertBtn = document.querySelectorAll('.menu-btn')[2];
+        
+        const coffeeContent = document.getElementById('coffee-content');
+        const teaContent = document.getElementById('tea-content');
+        const dessertContent = document.getElementById('dessert-content');
+        
+        function switchToCoffee() {
+            coffeeBtn.classList.add('active');
+            teaBtn.classList.remove('active');
+            dessertBtn.classList.remove('active');
+            
+            coffeeContent.style.display = 'grid';
+            teaContent.style.display = 'none';
+            dessertContent.style.display = 'none';
+            
+            // Reset all categories to original state
+            resetCategoryState('coffee');
+            resetCategoryState('tea');
+            resetCategoryState('dessert');
+            
+            // Show only coffee load more button, hide others
+            showLoadMoreButton('coffee');
+            hideLoadMoreButton('tea');
+            hideLoadMoreButton('dessert');
+        }
+        
+        function switchToTea() {
+            teaBtn.classList.add('active');
+            coffeeBtn.classList.remove('active');
+            dessertBtn.classList.remove('active');
+            
+            teaContent.style.display = 'grid';
+            coffeeContent.style.display = 'none';
+            dessertContent.style.display = 'none';
+            
+            // Reset all categories to original state
+            resetCategoryState('coffee');
+            resetCategoryState('tea');
+            resetCategoryState('dessert');
+            
+            // Show only tea load more button, hide others
+            showLoadMoreButton('tea');
+            hideLoadMoreButton('coffee');
+            hideLoadMoreButton('dessert');
+        }
+        
+        function switchToDessert() {
+            dessertBtn.classList.add('active');
+            coffeeBtn.classList.remove('active');
+            teaBtn.classList.remove('active');
+            
+            coffeeContent.style.display = 'none';
+            teaContent.style.display = 'none';
+            dessertContent.style.display = 'grid';
+            
+            // Reset all categories to original state
+            resetCategoryState('coffee');
+            resetCategoryState('tea');
+            resetCategoryState('dessert');
+            
+            // Show only dessert load more button, hide others
+            showLoadMoreButton('dessert');
+            hideLoadMoreButton('coffee');
+            hideLoadMoreButton('tea');
+        }
+        
+        coffeeBtn.addEventListener('click', switchToCoffee);
+        teaBtn.addEventListener('click', switchToTea);
+        dessertBtn.addEventListener('click', switchToDessert);
+        
+        // Initialize with coffee active (default state)
+        switchToCoffee();
+        
+        // click stuff
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const img = this.querySelector('img');
+                const title = this.querySelector('h3').textContent;
+                const description = this.querySelector('.child-description').textContent;
+                const price = this.querySelector('.child-price').textContent;
+                
+                document.getElementById('modal-img').src = img.src;
+                document.getElementById('modal-img').alt = img.alt;
+                document.getElementById('modal-title').textContent = title;
+                document.getElementById('modal-description').textContent = description;
+                document.getElementById('total-price').textContent = price.replace('$', '');
+                
+                document.querySelectorAll('.modal-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                    if (btn.hasAttribute('data-size') && btn.dataset.size === 'S') {
+                        btn.classList.add('selected');
+                    }
+                });
+                
+                document.getElementById('item-modal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // close modal
+        document.querySelectorAll('.modal').forEach(modal => {
+            const closeBtn = modal.querySelector('.modal-close-btn');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // buttons
+        document.querySelectorAll('.modal-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const section = this.closest('.modal-section');
+            
+                if (this.hasAttribute('data-size')) {
+                    section.querySelectorAll('.modal-btn').forEach(b => b.classList.remove('selected'));
+                    this.classList.add('selected');
+                } 
+                else if (this.hasAttribute('data-number')) {
+                    this.classList.toggle('selected');
+                }
+            });
+        });
+
+        // Helper functions for load more button visibility
+        function showLoadMoreButton(category) {
+            const loadMoreBtn = document.getElementById(`${category}-load-more`);
+            const content = document.getElementById(`${category}-content`);
+            
+            if (loadMoreBtn && content) {
+                const allItems = content.querySelectorAll('.menu-item');
+                // Only show if there are more than 4 items (so there are hidden items)
+                if (allItems.length > 4) {
+                    loadMoreBtn.style.setProperty('display', 'flex', 'important');
+                } else {
+                    loadMoreBtn.style.setProperty('display', 'none', 'important');
+                }
+            }
+        }
+
+        function hideLoadMoreButton(category) {
+            const loadMoreBtn = document.getElementById(`${category}-load-more`);
+            if (loadMoreBtn) {
+                loadMoreBtn.style.setProperty('display', 'none', 'important');
+            }
+        }
+
+        // Reset category to original state (re-add hidden class to items 5+)
+        function resetCategoryState(category) {
+            const content = document.getElementById(`${category}-content`);
+            
+            if (content) {
+                // Find items that should be hidden (items 5+)
+                const allItems = content.querySelectorAll('.menu-item');
+                allItems.forEach((item, index) => {
+                    // Items 5+ (index 4+) should have hidden class
+                    if (index >= 4) {
+                        item.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        // Load more functionality
+        function loadMore(category) {
+            const content = document.getElementById(`${category}-content`);
+            const loadMoreBtn = document.getElementById(`${category}-load-more`);
+            
+            if (content) {
+                // Show all hidden items by removing the hidden class
+                const hiddenItems = content.querySelectorAll('.menu-item.hidden');
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                
+                // Hide the load more button
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = 'none';
+                }
+            }
+        }
+    </script>
+    <script>
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            const body = document.body;
+            
+            mobileNav.classList.toggle('active');
+            body.classList.toggle('mobile-nav-open');
+        }
+    </script>
+</body>
+</html>
