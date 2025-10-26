@@ -4,38 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/images/favicon.jpg">
-    <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <!-- styles -->
     <link rel="stylesheet" href="./home.css">
     <title>Coffe-shop</title>
 </head>
 <body>
     <div class="container-xl">
         <header>
-            <!-- navbar -->
             <nav>
                 <div class="logo">
                     <a href="/index.html"><img src="/images/logo.png" alt="Coffee Shop Logo"></a>
                 </div>
-                <!-- nav links -->
                 <ul>
                     <li><a href="#Favourites-Coffee" class="action-link">Favorite coffee</a></li>
                     <li><a href="#About" class="action-link">About</a></li>
                     <li><a href="#Mobile-App" class="action-link">Mobile app</a></li>
                     <li><a href="#Footer" class="action-link">Contact us</a></li>
                 </ul>
-                <!-- menu button -->
                 <div class="menu_link">
                     <a href="/menu.html" class="action-link">Menu <img src="/images/coffee-cup.png" alt=""></a>
                 </div>
-                <!-- burger menu button -->
                 <button class="burger-menu" onclick="toggleMobileNav()" style="display: none;"></button>
             </nav>
             
-            <!-- mobile navigation overlay -->
             <div class="mobile-nav" id="mobileNav">
                 <button class="close-btn" onclick="toggleMobileNav()">&times;</button>
                 <a href="/index.html#Favourites-Coffee" onclick="toggleMobileNav()">Favorite coffee</a>
@@ -44,7 +37,6 @@
                 <a href="#Footer" onclick="toggleMobileNav()">Contact us</a>
                 <a href="/menu.html" class="menu-item" onclick="toggleMobileNav()">Menu <img src="/images/coffee-cup.png" alt=""></a>
             </div>
-            <!-- hero section -->
             <section id="Enjoy">
                 <video autoplay muted loop src="/video/2909914-uhd_3840_2024_24fps.mp4"></video>
                 <div class="hero-content">
@@ -58,41 +50,15 @@
         <main>
             <section id="Favourites-Coffee" class="carousel">
                 <h1 class="heading-1 accent">Choose your <span>favorite</span> coffee</h1>
-                <div class="carousel-slides">
-                    <div class="slide active">
-                        <img src="/images/coffee-slider-1.svg" alt="Slide 1">
-                        <div class="slide-text"><h3 class="heading-3">S'mores Frappuccino</h3>
-                        <p class="slide-par body-medium">This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.</p>
-                        <p class="slide-price heading-3">$5.50</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="/images/coffee-slider-2.svg" alt="Slide 2">
-                        <div class="slide-text"><h3 class="heading-3">Caramel Macchiato</h3>
-                        <p class="slide-par body-medium">Fragrant and unique classic espresso with rich caramel-peanut syrup, with cream under whipped thick foam.</p>
-                        <p class="slide-price heading-3">$5.00</p>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <img src="/images/coffee-slider-3.svg" alt="Slide 3">
-                        <div class="slide-text"><h3 class="heading-3">Ice coffee</h3>
-                        <p class="slide-par body-medium">A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.</p>
-                        <p class="slide-price heading-3">$4.50</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Progress bars -->
-                <div class="carousel-progress">
-                    <div class="progress active"></div>
-                    <div class="progress"></div>
-                    <div class="progress"></div>
-                </div>
+                <div class="carousel-slides"></div>
 
-                <!-- Arrows -->
+                <div class="carousel-progress"></div>
+
                 <button class="arrow arrow-left">&#10094;</button>
                 <button class="arrow arrow-right">&#10095;</button>
             </section>
+
             <section id="About" class="about">
                 <h2 class="heading-2">Resource is <span class="accent">the perfect and cozy place</span> where you can enjoy a variety of hot beverages, relax, catch up with friends, or get some work done.</h2>
                 <div class="about-imgs">
@@ -106,6 +72,7 @@
                     </div>
                 </div>
             </section>
+
             <section id="Mobile-App" class="Mobile-App">
                 <div class="mobile-left">
                     <h2 class="heading-2 accent"><span>Download</span> our apps to start ordering</h2>
@@ -116,7 +83,6 @@
                                 <path d="M22.7063 17.6307C22.6694 13.6324 26.0641 11.6872 26.2193 11.5966C24.2967 8.86366 21.3169 8.49026 20.2697 8.46048C17.767 8.20369 15.3393 9.92062 14.0644 9.92062C12.764 9.92062 10.8008 8.48529 8.68482 8.52747C5.96196 8.56841 3.41468 10.1055 2.01762 12.4923C-0.865556 17.359 1.28474 24.5108 4.04705 28.4446C5.42884 30.3712 7.04347 32.5223 9.15687 32.4466C11.2245 32.3635 11.9968 31.1614 14.4919 31.1614C16.9641 31.1614 17.6893 32.4466 19.8447 32.3983C22.0637 32.3635 23.4608 30.463 24.7942 28.519C26.3911 26.3108 27.0323 24.1362 27.0578 24.0245C27.0056 24.0071 22.7483 22.4229 22.7063 17.6307Z" fill="currentColor"/>
                                 <path d="M18.6347 5.87268C19.7468 4.51675 20.5076 2.67205 20.2964 0.800049C18.6869 0.86952 16.674 1.88554 15.5149 3.21169C14.4893 4.38029 13.5732 6.29571 13.8099 8.097C15.6179 8.2285 17.4743 7.20752 18.6347 5.87268Z" fill="currentColor"/>
                             </svg>
-
                             <div class="moba-stores-text">
                                 <span>Avaliable on the</span>
                                 <p>App Store</p>
@@ -147,7 +113,6 @@
                 <div class="footer-left">
                     <h2 class="heading-2">Sip, Savor, Smile. <span class="accent">It's coffee time!</span></h2>
                     <div class="socials">
-                        <!-- Twitter -->
                         <div class="footer-social twitter">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
                             <path
@@ -159,7 +124,6 @@
                             </svg>
                         </div>
 
-                        <!-- Instagram -->
                         <div class="footer-social instagram">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
                             <path
@@ -181,7 +145,6 @@
                             </svg>
                         </div>
 
-                        <!-- Facebook -->
                         <div class="footer-social facebook">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
                             <path
@@ -222,112 +185,85 @@
             </section>
         </footer>
     </div>
+
     <script>
-        const slides = document.querySelectorAll(".slide");
-        const progressBars = document.querySelectorAll(".progress");
+      (function () {
+        const carousel = document.querySelector(".carousel");
+        const slidesContainer = document.querySelector(".carousel-slides");
+        const progressContainer = document.querySelector(".carousel-progress");
         const prevBtn = document.querySelector(".arrow-left");
         const nextBtn = document.querySelector(".arrow-right");
-        const track = document.querySelector(".carousel-slides");
-        const carousel = document.querySelector(".carousel");
 
         let currentIndex = 0;
         const slideDuration = 5000;
-        let autoSlideInterval;
+        let autoSlideInterval = null;
 
-        // Touch/swipe variables
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let touchStartY = 0;
-        let touchEndY = 0;
-        const minSwipeDistance = 50; // minimum distance for a swipe
+        let touchStartX = 0, touchEndX = 0, touchStartY = 0, touchEndY = 0;
+        const minSwipeDistance = 50;
 
-        function updateActive(index) {
-            if(index >= slides.length) index = 0
-            if(index < 0) index = slides.length - 1
-            currentIndex = index
+        function wireCarousel() {
+          if (carousel.getAttribute("data-initialized") === "1") return;
 
-            slides.forEach(slide => slide.classList.remove("active"));
+          let slides = document.querySelectorAll(".slide");
+          let progressBars = document.querySelectorAll(".progress");
+          if (slides.length === 0 || progressBars.length === 0) return; 
+
+          function updateActive(index) {
+            if (index >= slides.length) index = 0;
+            if (index < 0) index = slides.length - 1;
+            currentIndex = index;
+
+            slides.forEach(s => s.classList.remove("active"));
+            progressBars.forEach(p => p.classList.remove("active"));
             slides[currentIndex].classList.add("active");
-            progressBars.forEach(bar => bar.classList.remove("active"));
             progressBars[currentIndex].classList.add("active");
 
-            track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+            (slidesContainer).style.transform = `translateX(-${currentIndex * 100}%)`;
+          }
 
-        nextBtn.addEventListener("click", () => {
-            updateActive(currentIndex + 1);
-            restartTimer();
-        });
-        prevBtn.addEventListener("click", () => {
-            updateActive(currentIndex - 1);
-            restartTimer();
-        });
+          function nextSlide() { updateActive(currentIndex + 1); }
+          function startTimer() { autoSlideInterval = setInterval(nextSlide, slideDuration); }
+          function stopTimer() { clearInterval(autoSlideInterval); }
+          function restartTimer() { stopTimer(); startTimer(); }
 
-        function nextSlide() {
-            updateActive(currentIndex + 1);
-        }
+          nextBtn.addEventListener("click", () => { updateActive(currentIndex + 1); restartTimer(); });
+          prevBtn.addEventListener("click", () => { updateActive(currentIndex - 1); restartTimer(); });
 
-         function startTimer() {
-            autoSlideInterval = setInterval(nextSlide, slideDuration);
-        }
-
-        function stopTimer() {
-            clearInterval(autoSlideInterval);
-        }
-
-        function restartTimer() {
-            stopTimer();
-            startTimer();
-        }
-
-        // Touch event handlers for swipe functionality
-        function handleTouchStart(e) {
-            touchStartX = e.changedTouches[0].screenX;
-            touchStartY = e.changedTouches[0].screenY;
-        }
-
-        function handleTouchMove(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            touchEndY = e.changedTouches[0].screenY;
-        }
-
-        function handleTouchEnd() {
-            const swipeDistanceX = touchEndX - touchStartX;
-            const swipeDistanceY = Math.abs(touchEndY - touchStartY);
-            
-            // Only register as swipe if horizontal movement is greater than vertical
-            // This prevents interfering with page scrolling
-            if (Math.abs(swipeDistanceX) > minSwipeDistance && Math.abs(swipeDistanceX) > swipeDistanceY) {
-                if (swipeDistanceX > 0) {
-                    // Swipe right - go to previous slide
-                    updateActive(currentIndex - 1);
-                } else {
-                    // Swipe left - go to next slide
-                    updateActive(currentIndex + 1);
-                }
-                restartTimer();
+          function handleTouchStart(e){ touchStartX = e.changedTouches[0].screenX; touchStartY = e.changedTouches[0].screenY; }
+          function handleTouchMove(e){ touchEndX = e.changedTouches[0].screenX; touchEndY = e.changedTouches[0].screenY; }
+          function handleTouchEnd(){
+            const dx = touchEndX - touchStartX;
+            const dy = Math.abs(touchEndY - touchStartY);
+            if (Math.abs(dx) > minSwipeDistance && Math.abs(dx) > dy) {
+              updateActive(dx > 0 ? currentIndex - 1 : currentIndex + 1);
+              restartTimer();
             }
+          }
+          carousel.addEventListener("touchstart", handleTouchStart, false);
+          carousel.addEventListener("touchmove", handleTouchMove, false);
+          carousel.addEventListener("touchend", handleTouchEnd, false);
+
+          updateActive(0);
+          startTimer();
+          carousel.setAttribute("data-initialized", "1");
         }
+        const mo = new MutationObserver(() => wireCarousel());
+        mo.observe(slidesContainer, { childList: true, subtree: false });
+        mo.observe(progressContainer, { childList: true, subtree: false });
 
-        // Add touch event listeners to carousel
-        carousel.addEventListener('touchstart', handleTouchStart, false);
-        carousel.addEventListener('touchmove', handleTouchMove, false);
-        carousel.addEventListener('touchend', handleTouchEnd, false);
-
-        updateActive(currentIndex);
-        startTimer()
-
+        document.addEventListener("DOMContentLoaded", wireCarousel);
+      })();
     </script>
-    
-    <!-- mobile nav script -->
+
     <script>
         function toggleMobileNav() {
             const mobileNav = document.getElementById('mobileNav');
             const body = document.body;
-            
             mobileNav.classList.toggle('active');
             body.classList.toggle('mobile-nav-open');
         }
     </script>
+
+    <script type="module" src="/src/pages/main.ts"></script>
 </body>
 </html>

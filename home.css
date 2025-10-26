@@ -205,11 +205,12 @@ nav {
 
 .carousel-slides {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 300ms ease-in-out;
+  will-change: transform;
 
   img {
-    width: 530px;
-    height: 530px;
+    width: 50%;
+    height: 600px;
   }
 }
 
@@ -222,12 +223,8 @@ nav {
   text-align: center;
 }
 
-.slide img {
-  width: 100%;
-  display: block;
-}
-
 .slide-text {
+  padding-top: 20px;
   position: static; 
   bottom: auto;
   left: auto;
@@ -595,6 +592,10 @@ a{
     
     nav {
       .menu_link {
+        display: none;
+    }
+    
+    .right-nav-group {
         display: none;
     }
     }
