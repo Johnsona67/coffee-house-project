@@ -1,17 +1,31 @@
 import { getFavoriteProducts } from "../api/product";
+import { initLanguageSelectors, changeLanguage } from "../utils/translation";
+import "../../home.css";
 
-window.addEventListener("DOMContentLoaded", async () => {
-  const slidesContainer = document.querySelector(".carousel-slides") as HTMLElement;
-  const progressContainer = document.querySelector(".carousel-progress") as HTMLElement;
+if (typeof window !== "undefined") {
+  (window as any).setAppLanguage = changeLanguage;
+}
 
-  if (!slidesContainer || !progressContainer) return;
+let isLoadingFavorites = false;
+
+async function loadFavorites(): Promise<void> {
+  if (isLoadingFavorites) return;
+  isLoadingFavorites = true;
+
+  const slidesContainer = document.querySelector(".carousel-slides") as HTMLElement | null;
+  const progressContainer = document.querySelector(".carousel-progress") as HTMLElement | null;
+
+  if (!slidesContainer || !progressContainer) {
+    isLoadingFavorites = false;
+    return;
+  }
+
+  slidesContainer.innerHTML = "";
+  progressContainer.innerHTML = "";
 
   try {
     const favorites = await getFavoriteProducts(3);
     favorites.sort((a, b) => a.id - b.id);
-
-    slidesContainer.innerHTML = "";
-    progressContainer.innerHTML = "";
 
     favorites.forEach((item, index) => {
       const slide = document.createElement("div");
@@ -34,15 +48,25 @@ window.addEventListener("DOMContentLoaded", async () => {
     });
 
     setupCarousel();
-    initCarouselController()
-
+    initCarouselController();
   } catch (error) {
     console.error("Error loading favorites:", error);
     const section = document.getElementById("Favourites-Coffee");
     if (section) {
       section.innerHTML = `<p class="error">Something went wrong. Please, refresh the page.</p>`;
     }
+  } finally {
+    isLoadingFavorites = false;
   }
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  initLanguageSelectors();
+  void loadFavorites();
+});
+
+document.addEventListener("languagechange", () => {
+  void loadFavorites();
 });
 
 function setupCarousel(): void {
@@ -51,6 +75,13 @@ function setupCarousel(): void {
   const left = document.querySelector(".arrow-left") as HTMLButtonElement;
   const right = document.querySelector(".arrow-right") as HTMLButtonElement;
   let current = 0;
+
+  if (!slides.length || !progress.length || !left || !right) return;
+  if (right.dataset.bound === "1" && left.dataset.bound === "1") {
+    slides.forEach((s, i) => s.classList.toggle("active", i === 0));
+    progress.forEach((p, i) => p.classList.toggle("active", i === 0));
+    return;
+  }
 
   const showSlide = (index: number) => {
     slides.forEach((s, i) => s.classList.toggle("active", i === index));
@@ -69,6 +100,8 @@ function setupCarousel(): void {
 
   right.addEventListener("click", next);
   left.addEventListener("click", prev);
+  right.dataset.bound = "1";
+  left.dataset.bound = "1";
 }
 function initCarouselController(): void {
   const carousel = document.querySelector(".carousel") as HTMLElement | null;

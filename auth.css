@@ -222,6 +222,42 @@
     box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
 }
 
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-switcher .lang-btn {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #403F3D;
+    background: transparent;
+    font-weight: 600;
+    font-size: 14px;
+    color: #403F3D;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.language-switcher .lang-btn:hover,
+.language-switcher .lang-btn.active {
+    background-color: #665F55;
+    border-color: #665F55;
+    color: #E1D4C9;
+}
+
+.mobile-language-switcher {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.mobile-language-switcher .lang-btn {
+    flex: 1;
+    padding: 10px 0;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .auth-main {

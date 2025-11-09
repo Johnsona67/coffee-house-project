@@ -1,8 +1,19 @@
 import type { Product } from "../types/api";
-import { getMenuProducts } from "../api/product"; 
-import { AuthApi } from "../api/auth"; 
+import { getMenuProducts } from "../api/product";
+import { AuthApi } from "../api/auth";
+import { initLanguageSelectors, changeLanguage, applyTranslations } from "../utils/translation";
+import "../../menu.css";
 
+if (typeof window !== "undefined") {
+  (window as any).setAppLanguage = changeLanguage;
+}
+
+type Category = "coffee" | "tea" | "dessert";
+
+const categories: Category[] = ["coffee", "tea", "dessert"];
 const FIRST_VISIBLE = 4;
+let currentCategory: Category = "coffee";
+let isLoadingMenu = false;
 
 function updateNavigationAuthStatus() {
   const isAuthenticated = AuthApi.isAuthenticated();
@@ -20,9 +31,10 @@ function updateNavigationAuthStatus() {
         const logoutDiv = document.createElement('div');
         logoutDiv.className = 'auth-links';
         logoutDiv.innerHTML = `
-          <a href="#" id="logout-btn" class="action-link">Logout</a>
+          <a href="#" id="logout-btn" class="action-link" data-translate="nav.logout">Logout</a>
         `;
         menuLink.parentNode?.insertBefore(logoutDiv, menuLink);
+        applyTranslations(nav);
         
         const logoutBtn = document.getElementById('logout-btn');
         if (logoutBtn) {
@@ -85,20 +97,7 @@ function cardEl(p: Product): HTMLElement {
   return el;
 }
 
-function showLoadMoreButton(category: "coffee" | "tea" | "dessert") {
-  const btnWrap = document.getElementById(`${category}-load-more`);
-  const content = document.getElementById(`${category}-content`);
-  if (!btnWrap || !content) return;
-  const all = content.querySelectorAll(".menu-item");
-  btnWrap.style.display = all.length > FIRST_VISIBLE ? "flex" : "none";
-}
-
-function hideLoadMoreButton(category: "coffee" | "tea" | "dessert") {
-  const btnWrap = document.getElementById(`${category}-load-more`);
-  if (btnWrap) btnWrap.style.display = "none";
-}
-
-function resetHidden(category: "coffee" | "tea" | "dessert") {
+function resetHidden(category: Category) {
   const content = document.getElementById(`${category}-content`);
   if (!content) return;
   const all = content.querySelectorAll<HTMLElement>(".menu-item");
@@ -108,7 +107,16 @@ function resetHidden(category: "coffee" | "tea" | "dessert") {
   });
 }
 
-function renderSection(category: "coffee" | "tea" | "dessert", items: Product[]) {
+function updateLoadMoreButton(category: Category, isActive: boolean) {
+  const btnWrap = document.getElementById(`${category}-load-more`);
+  const content = document.getElementById(`${category}-content`);
+  if (!btnWrap || !content) return;
+
+  const hasHiddenItems = Boolean(content.querySelector(".menu-item.hidden"));
+  btnWrap.style.display = isActive && hasHiddenItems ? "flex" : "none";
+}
+
+function renderSection(category: Category, items: Product[]) {
   const root = document.getElementById(`${category}-content`);
   if (!root) return;
 
@@ -120,8 +128,7 @@ function renderSection(category: "coffee" | "tea" | "dessert", items: Product[])
       if (i >= FIRST_VISIBLE) el.classList.add("hidden");
       root.appendChild(el);
     });
-
-  showLoadMoreButton(category);
+  updateLoadMoreButton(category, currentCategory === category);
 }
 
 function calculatePrice(modalId: string, basePrice: number): number {
@@ -239,6 +246,8 @@ function hideErrorNotification() {
 (window as any).hideErrorNotification = hideErrorNotification;
 
 function wireModal() {
+  const mainContent = document.querySelector(".main-content") as HTMLElement | null;
+  if (mainContent?.dataset.modalBound === "1") return;
   const coffeeTeaModal = document.getElementById("coffee-tea-modal") as HTMLElement;
   const coffeeTeaModalImg = document.getElementById("coffee-tea-modal-img") as HTMLImageElement;
   const coffeeTeaModalTitle = document.getElementById("coffee-tea-modal-title") as HTMLElement;
@@ -251,7 +260,7 @@ function wireModal() {
   const dessertModalDesc = document.getElementById("dessert-modal-description") as HTMLElement;
   const dessertTotalPrice = document.getElementById("dessert-total-price") as HTMLElement;
 
-  document.querySelector(".main-content")?.addEventListener("click", (e) => {
+  mainContent?.addEventListener("click", (e) => {
     const card = (e.target as HTMLElement).closest(".menu-item") as HTMLElement | null;
     if (!card) return;
 
@@ -328,6 +337,7 @@ function wireModal() {
 
     document.body.style.overflow = "hidden";
   });
+  if (mainContent) mainContent.dataset.modalBound = "1";
 
   coffeeTeaModal.querySelector(".modal-add-to-cart-btn")?.addEventListener("click", () => {
     const basePrice = parseFloat(coffeeTeaModal.getAttribute("data-base-price") || "0");
@@ -432,40 +442,79 @@ function wireModal() {
   });
 }
 
-function switchTab(to: "coffee" | "tea" | "dessert") {
-  const tabs = document.querySelectorAll<HTMLButtonElement>(".menu-btn");
-  const [coffeeBtn, teaBtn, dessertBtn] = Array.from(tabs);
-  const map: Record<typeof to, {content: HTMLElement|null, btn: HTMLButtonElement}> = {
-    coffee: { content: document.getElementById("coffee-content"), btn: coffeeBtn },
-    tea: { content: document.getElementById("tea-content"), btn: teaBtn },
-    dessert: { content: document.getElementById("dessert-content"), btn: dessertBtn }
-  };
+function switchTab(to: Category) {
+  currentCategory = to;
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>(".menu-btn"));
 
-  tabs.forEach(b => b?.classList.remove("active"));
-  map[to].btn?.classList.add("active");
+  categories.forEach((category, index) => {
+    const isActive = category === to;
+    const content = document.getElementById(`${category}-content`) as HTMLElement | null;
+    const tabButton = tabs[index];
 
-  (document.getElementById("coffee-content") as HTMLElement).style.display = (to === "coffee") ? "grid" : "none";
-  (document.getElementById("tea-content") as HTMLElement).style.display    = (to === "tea") ? "grid" : "none";
-  (document.getElementById("dessert-content") as HTMLElement).style.display= (to === "dessert") ? "grid" : "none";
+    if (tabButton) {
+      tabButton.classList.toggle("active", isActive);
+    }
 
-  (document.getElementById("coffee-load-more") as HTMLElement).style.display  = (to === "coffee") ? "" : "none";
-  (document.getElementById("tea-load-more") as HTMLElement).style.display     = (to === "tea") ? "" : "none";
-  (document.getElementById("dessert-load-more") as HTMLElement).style.display = (to === "dessert") ? "" : "none";
+    if (content) {
+      content.style.display = isActive ? "grid" : "none";
+    }
 
-  resetHidden("coffee");
-  resetHidden("tea");
-  resetHidden("dessert");
+    resetHidden(category);
+    updateLoadMoreButton(category, isActive);
+  });
 }
 
-(window as any).loadMore = function(category: "coffee" | "tea" | "dessert") {
+async function loadMenu(): Promise<void> {
+  if (isLoadingMenu) return;
+  isLoadingMenu = true;
+
+  const coffeeRoot = document.getElementById("coffee-content");
+  const teaRoot = document.getElementById("tea-content");
+  const dessertRoot = document.getElementById("dessert-content");
+
+  if (coffeeRoot) {
+    coffeeRoot.innerHTML = `<div class="fs-loader"><div class="fs-spinner" aria-label="Loading products"></div></div>`;
+  }
+  if (teaRoot) {
+    teaRoot.innerHTML = "";
+  }
+  if (dessertRoot) {
+    dessertRoot.innerHTML = "";
+  }
+
+  try {
+    const all = await getMenuProducts();
+
+    const coffee = all.filter(p => (p.category || "").toLowerCase() === "coffee");
+    const tea = all.filter(p => (p.category || "").toLowerCase() === "tea");
+    const dessert = all.filter(p => (p.category || "").toLowerCase() === "dessert");
+
+    renderSection("coffee", coffee);
+    renderSection("tea", tea);
+    renderSection("dessert", dessert);
+
+    switchTab(currentCategory);
+    wireModal();
+  } catch (e) {
+    console.error(e);
+    if (coffeeRoot) {
+      coffeeRoot.innerHTML = `<div class="fs-error">Something went wrong. Please, refresh the page</div>`;
+    }
+  } finally {
+    isLoadingMenu = false;
+  }
+}
+
+(window as any).loadMore = function(category: Category) {
   const content = document.getElementById(`${category}-content`);
   const btnWrap = document.getElementById(`${category}-load-more`);
   if (!content || !btnWrap) return;
   content.querySelectorAll(".menu-item.hidden").forEach(el => el.classList.remove("hidden"));
-  btnWrap.style.display = "none";
+  updateLoadMoreButton(category, true);
 };
 
-window.addEventListener("DOMContentLoaded", async () => {
+window.addEventListener("DOMContentLoaded", () => {
+  initLanguageSelectors();
   updateNavigationAuthStatus();
   
   cart = getCartFromStorage();
@@ -476,26 +525,9 @@ window.addEventListener("DOMContentLoaded", async () => {
   teaBtn?.addEventListener("click", () => switchTab("tea"));
   dessertBtn?.addEventListener("click", () => switchTab("dessert"));
 
-  const coffeeRoot = document.getElementById("coffee-content");
-  if (coffeeRoot) coffeeRoot.innerHTML = `<div class="fs-loader"><div class="fs-spinner" aria-label="Loading products"></div></div>`;
+  void loadMenu();
+});
 
-  try {
-    const all = await getMenuProducts();
-
-    const coffee  = all.filter(p => (p.category || "").toLowerCase() === "coffee");
-    const tea     = all.filter(p => (p.category || "").toLowerCase() === "tea");
-    const dessert = all.filter(p => (p.category || "").toLowerCase() === "dessert");
-
-    renderSection("coffee", coffee);
-    renderSection("tea", tea);
-    renderSection("dessert", dessert);
-
-    switchTab("coffee");
-
-    wireModal();
-
-  } catch (e) {
-    console.error(e);
-    if (coffeeRoot) coffeeRoot.innerHTML = `<div class="fs-error">Something went wrong. Please, refresh the page</div>`;
-  }
+document.addEventListener("languagechange", () => {
+  void loadMenu();
 });

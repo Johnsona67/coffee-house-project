@@ -1,6 +1,12 @@
 import { AuthApi } from '../api/auth';
 import { ValidationUtils } from '../utils/validation';
+import { initLanguageSelectors, changeLanguage } from '../utils/translation';
 import { ApiError } from '../api/client';
+import "../../auth.css";
+
+if (typeof window !== "undefined") {
+  (window as any).setAppLanguage = changeLanguage;
+}
 
 const STREET_DATA = {
   'New York': [
@@ -279,5 +285,6 @@ class RegisterPage {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLanguageSelectors();
   new RegisterPage();
 });

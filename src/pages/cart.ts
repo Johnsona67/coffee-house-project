@@ -1,4 +1,10 @@
-import { AuthApi } from '../api/auth';
+import { AuthApi } from "../api/auth";
+import { initLanguageSelectors, t, changeLanguage } from "../utils/translation";
+import "../../cart.css";
+
+if (typeof window !== "undefined") {
+  (window as any).setAppLanguage = changeLanguage;
+}
 
 interface CartItem {
   id: number;
@@ -87,9 +93,9 @@ function renderCartItems() {
   if (cart.length === 0) {
     cartItemsContainer.innerHTML = `
       <div class="empty-cart">
-        <h2>Your cart is empty</h2>
-        <p>Add some delicious items from our menu!</p>
-        <a href="/menu.html" class="cart-btn">Browse Menu</a>
+        <h2>${t("cart.emptyTitle")}</h2>
+        <p>${t("cart.emptySubtitle")}</p>
+        <a href="/menu.html" class="cart-btn">${t("cart.emptyCta")}</a>
       </div>
     `;
     cartTotalElement.textContent = '0.00';
@@ -137,7 +143,7 @@ function confirmOrder() {
   if (!confirmBtn || !confirmationDiv) return;
   
   confirmBtn.disabled = true;
-  confirmBtn.textContent = 'Placing Order...';
+  confirmBtn.textContent = t("cart.placingOrder");
   
   setTimeout(() => {
     try {
@@ -152,7 +158,7 @@ function confirmOrder() {
       confirmationDiv.style.display = 'block';
       
       confirmBtn.disabled = false;
-      confirmBtn.textContent = 'Confirm Order';
+      confirmBtn.textContent = t("cart.confirmOrder");
       
       setTimeout(() => {
         confirmationDiv.style.display = 'none';
@@ -161,7 +167,7 @@ function confirmOrder() {
     } catch (error) {
       console.error('Error placing order:', error);
       confirmBtn.disabled = false;
-      confirmBtn.textContent = 'Confirm Order';
+      confirmBtn.textContent = t("cart.confirmOrder");
     }
   }, 2000); // 2 second delay to simulate API call
 }
@@ -174,11 +180,12 @@ function initializeCart() {
   updateCartCount();
   renderCartItems();
   
-  const confirmBtn = document.getElementById('confirm-order-btn') as HTMLElement;
+  const confirmBtn = document.getElementById("confirm-order-btn") as HTMLButtonElement | null;
   if (confirmBtn) {
-    confirmBtn.style.display = cart.length > 0 ? 'inline-block' : 'none';
+    confirmBtn.style.display = cart.length > 0 ? "inline-block" : "none";
+    confirmBtn.textContent = t("cart.confirmOrder");
   }
-  
+   
   setupAuthButtons();
 }
 
@@ -221,4 +228,16 @@ function updateAuthButtonVisibility() {
   }
 }
 
-window.addEventListener('DOMContentLoaded', initializeCart);
+window.addEventListener("DOMContentLoaded", () => {
+  initLanguageSelectors();
+  initializeCart();
+});
+
+document.addEventListener("languagechange", () => {
+  renderCartItems();
+  updateAuthButtonVisibility();
+  const confirmBtn = document.getElementById("confirm-order-btn") as HTMLButtonElement | null;
+  if (confirmBtn) {
+    confirmBtn.textContent = t("cart.confirmOrder");
+  }
+});

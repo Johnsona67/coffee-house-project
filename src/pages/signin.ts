@@ -1,6 +1,12 @@
 import { AuthApi } from '../api/auth';
 import { ValidationUtils } from '../utils/validation';
 import { ApiError } from '../api/client';
+import { initLanguageSelectors, changeLanguage } from '../utils/translation';
+import "../../auth.css";
+
+if (typeof window !== "undefined") {
+  (window as any).setAppLanguage = changeLanguage;
+}
 
 class SignInPage {
   private form: HTMLFormElement;
@@ -144,5 +150,6 @@ class SignInPage {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLanguageSelectors();
   new SignInPage();
 });
