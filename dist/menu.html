@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/favicon-CUq2E-NZ-CUq2E-NZ.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <title>Coffee Shop Menu</title>
+  <link rel="modulepreload" crossorigin href="data:text/javascript;base64,KGZ1bmN0aW9uKCl7Y29uc3Qgbz1kb2N1bWVudC5jcmVhdGVFbGVtZW50KCJsaW5rIikucmVsTGlzdDtpZihvJiZvLnN1cHBvcnRzJiZvLnN1cHBvcnRzKCJtb2R1bGVwcmVsb2FkIikpcmV0dXJuO2Zvcihjb25zdCBlIG9mIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJ2xpbmtbcmVsPSJtb2R1bGVwcmVsb2FkIl0nKSlzKGUpO25ldyBNdXRhdGlvbk9ic2VydmVyKGU9Pntmb3IoY29uc3QgciBvZiBlKWlmKHIudHlwZT09PSJjaGlsZExpc3QiKWZvcihjb25zdCB0IG9mIHIuYWRkZWROb2Rlcyl0LnRhZ05hbWU9PT0iTElOSyImJnQucmVsPT09Im1vZHVsZXByZWxvYWQiJiZzKHQpfSkub2JzZXJ2ZShkb2N1bWVudCx7Y2hpbGRMaXN0OiEwLHN1YnRyZWU6ITB9KTtmdW5jdGlvbiBuKGUpe2NvbnN0IHI9e307cmV0dXJuIGUuaW50ZWdyaXR5JiYoci5pbnRlZ3JpdHk9ZS5pbnRlZ3JpdHkpLGUucmVmZXJyZXJQb2xpY3kmJihyLnJlZmVycmVyUG9saWN5PWUucmVmZXJyZXJQb2xpY3kpLGUuY3Jvc3NPcmlnaW49PT0idXNlLWNyZWRlbnRpYWxzIj9yLmNyZWRlbnRpYWxzPSJpbmNsdWRlIjplLmNyb3NzT3JpZ2luPT09ImFub255bW91cyI/ci5jcmVkZW50aWFscz0ib21pdCI6ci5jcmVkZW50aWFscz0ic2FtZS1vcmlnaW4iLHJ9ZnVuY3Rpb24gcyhlKXtpZihlLmVwKXJldHVybjtlLmVwPSEwO2NvbnN0IHI9bihlKTtmZXRjaChlLmhyZWYscil9fSkoKTtjbGFzcyBjIGV4dGVuZHMgRXJyb3J7Y29uc3RydWN0b3IobyxuLHMpe3N1cGVyKG8pLHRoaXMubmFtZT0iQXBpRXJyb3IiLHRoaXMuc3RhdHVzPW4sdGhpcy5ib2R5PXN9fWFzeW5jIGZ1bmN0aW9uIGwoYSx7dGltZW91dE1zOm89OGUzLGhlYWRlcnM6biwuLi5zfT17fSl7Y29uc3QgZT1uZXcgQWJvcnRDb250cm9sbGVyLHI9c2V0VGltZW91dCgoKT0+ZS5hYm9ydCgpLG8pO3RyeXtjb25zdCB0PWF3YWl0IGZldGNoKGEsey4uLnMsaGVhZGVyczp7QWNjZXB0OiJhcHBsaWNhdGlvbi9qc29uIiwuLi5uPz97fX0sc2lnbmFsOmUuc2lnbmFsfSk7bGV0IGk7dHJ5e2k9YXdhaXQgdC5qc29uKCl9Y2F0Y2h7fWlmKCF0Lm9rKXtjb25zdCB1PWk/LmVycm9yPz9gSFRUUCAke3Quc3RhdHVzfWA7dGhyb3cgbmV3IGModSx0LnN0YXR1cyxpKX1yZXR1cm4gaX1jYXRjaCh0KXt0aHJvdyB0IGluc3RhbmNlb2YgRE9NRXhjZXB0aW9uJiZ0Lm5hbWU9PT0iQWJvcnRFcnJvciI/bmV3IGMoIlJlcXVlc3QgdGltZWQgb3V0IiwwKTp0IGluc3RhbmNlb2YgYz90Om5ldyBjKHQubWVzc2FnZXx8Ik5ldHdvcmsgZXJyb3IiLDApfWZpbmFsbHl7Y2xlYXJUaW1lb3V0KHIpfX1leHBvcnR7YyBhcyBBLGwgYXMgcn07DQovLyMgc291cmNlTWFwcGluZ1VSTD1jbGllbnQtQk1pdEVqam4uanMubWFwDQo=">
+  <link rel="modulepreload" crossorigin href="data:text/javascript;base64,aW1wb3J0e3IgYXMgbn1mcm9tIi4vY2xpZW50LUJNaXRFampuLmpzIjtmdW5jdGlvbiBkKG8pe2lmKHR5cGVvZiBvIT0ib2JqZWN0Inx8bz09PW51bGwpcmV0dXJuITE7Y29uc3QgdD1vLGU9dHlwZW9mIHQucHJpY2U9PSJzdHJpbmcifHx0eXBlb2YgdC5wcmljZT09Im51bWJlciIscj10LmRpc2NvdW50UHJpY2U9PT12b2lkIDB8fHQuZGlzY291bnRQcmljZT09PW51bGx8fHR5cGVvZiB0LmRpc2NvdW50UHJpY2U9PSJzdHJpbmcifHx0eXBlb2YgdC5kaXNjb3VudFByaWNlPT0ibnVtYmVyIixpPXQuY2F0ZWdvcnk9PT12b2lkIDB8fHQuY2F0ZWdvcnk9PT1udWxsfHx0eXBlb2YgdC5jYXRlZ29yeT09InN0cmluZyIsYT10LmRlc2NyaXB0aW9uPT09dm9pZCAwfHx0LmRlc2NyaXB0aW9uPT09bnVsbHx8dHlwZW9mIHQuZGVzY3JpcHRpb249PSJzdHJpbmciO3JldHVybiB0eXBlb2YgdC5pZD09Im51bWJlciImJnR5cGVvZiB0Lm5hbWU9PSJzdHJpbmciJiZhJiZlJiZyJiZpfWZ1bmN0aW9uIHMobyl7aWYodHlwZW9mIG8hPSJvYmplY3QifHxvPT09bnVsbCl0aHJvdyBuZXcgRXJyb3IoIk1hbGZvcm1lZCByZXNwb25zZTogbm90IGFuIG9iamVjdCIpO2NvbnN0IHQ9byxlPXQuZGF0YTtpZighQXJyYXkuaXNBcnJheShlKSl0aHJvdyBuZXcgRXJyb3IoIk1hbGZvcm1lZCByZXNwb25zZTogZGF0YSBpcyBub3QgYW4gYXJyYXkiKTtjb25zdCByPWUuZmlsdGVyKGQpO2lmKHQuZGF0YT1yLHIubGVuZ3RoPT09MCl0aHJvdyBuZXcgRXJyb3IoIk5vIHZhbGlkIHByb2R1Y3RzIGZvdW5kIGluIHRoZSByZXNwb25zZS4iKX1jb25zdCBjPSJodHRwczovLzZrdDI5a2tldWIuZXhlY3V0ZS1hcGkuZXUtY2VudHJhbC0xLmFtYXpvbmF3cy5jb20iLHU9Ii9wcm9kdWN0cy9mYXZvcml0ZXMiLGY9Ii9wcm9kdWN0cyIscD0zO2FzeW5jIGZ1bmN0aW9uIHkobz1wKXtjb25zdCB0PWAke2N9JHt1fWAsZT1hd2FpdCBuKHQse21ldGhvZDoiR0VUIn0pO3JldHVybiBzKGUpLGUuZGF0YS5maWx0ZXIocj0+ci5jYXRlZ29yeT09PSJjb2ZmZWUiKS5zbGljZSgwLG8pfWFzeW5jIGZ1bmN0aW9uIGcoKXtjb25zdCBvPWAke2N9JHtmfWAsdD1hd2FpdCBuKG8se21ldGhvZDoiR0VUIn0pO3JldHVybiBzKHQpLHQuZGF0YS5zb3J0KChlLHIpPT5lLmlkLXIuaWQpfWV4cG9ydHtnIGFzIGEseSBhcyBnfTsNCi8vIyBzb3VyY2VNYXBwaW5nVVJMPXByb2R1Y3QtQ0l2ZzZlTTcuanMubWFwDQo=">
+  <link rel="modulepreload" crossorigin href="data:text/javascript;base64,aW1wb3J0e3IgYXMgcyxBIGFzIHJ9ZnJvbSIuL2NsaWVudC1CTWl0RWpqbi5qcyI7Y29uc3QgYT0iaHR0cHM6Ly82a3QyOWtrZXViLmV4ZWN1dGUtYXBpLmV1LWNlbnRyYWwtMS5hbWF6b25hd3MuY29tIjtjbGFzcyBje3N0YXRpYyBnZXRBdXRoSGVhZGVycyhlKXtjb25zdCB0PXsiQ29udGVudC1UeXBlIjoiYXBwbGljYXRpb24vanNvbiIsQWNjZXB0OiJhcHBsaWNhdGlvbi9qc29uIn07cmV0dXJuIGUmJih0LkF1dGhvcml6YXRpb249YEJlYXJlciAke2V9YCksdH1zdGF0aWMgYXN5bmMgbG9naW4oZSl7dHJ5e3JldHVybiBhd2FpdCBzKGAke2F9L2F1dGgvbG9naW5gLHttZXRob2Q6IlBPU1QiLGhlYWRlcnM6dGhpcy5nZXRBdXRoSGVhZGVycygpLGJvZHk6SlNPTi5zdHJpbmdpZnkoZSl9KX1jYXRjaCh0KXtpZih0IGluc3RhbmNlb2Ygcil0cnl7Y29uc3Qgbz10LmJvZHk7dGhyb3cgbmV3IHIoby5lcnJvcnx8IkxvZ2luIGZhaWxlZCIsdC5zdGF0dXMsdC5ib2R5KX1jYXRjaHt0aHJvdyBuZXcgcigiSW5jb3JyZWN0IGxvZ2luIG9yIHBhc3N3b3JkIix0LnN0YXR1cyx0LmJvZHkpfXRocm93IHR9fXN0YXRpYyBhc3luYyByZWdpc3RlcihlKXt0cnl7cmV0dXJuIGF3YWl0IHMoYCR7YX0vYXV0aC9yZWdpc3RlcmAse21ldGhvZDoiUE9TVCIsaGVhZGVyczp0aGlzLmdldEF1dGhIZWFkZXJzKCksYm9keTpKU09OLnN0cmluZ2lmeShlKX0pfWNhdGNoKHQpe2lmKHQgaW5zdGFuY2VvZiByKXRyeXtjb25zdCBvPXQuYm9keTt0aHJvdyBuZXcgcihvLmVycm9yfHwiUmVnaXN0cmF0aW9uIGZhaWxlZCIsdC5zdGF0dXMsdC5ib2R5KX1jYXRjaHt0aHJvdyBuZXcgcigiUmVnaXN0cmF0aW9uIGZhaWxlZCIsdC5zdGF0dXMsdC5ib2R5KX10aHJvdyB0fX1zdGF0aWMgYXN5bmMgZ2V0UHJvZmlsZShlKXt0cnl7cmV0dXJuIGF3YWl0IHMoYCR7YX0vYXV0aC9wcm9maWxlYCx7bWV0aG9kOiJHRVQiLGhlYWRlcnM6dGhpcy5nZXRBdXRoSGVhZGVycyhlKX0pfWNhdGNoKHQpe3Rocm93IHQgaW5zdGFuY2VvZiByP25ldyByKCJGYWlsZWQgdG8gZ2V0IHByb2ZpbGUiLHQuc3RhdHVzLHQuYm9keSk6dH19c3RhdGljIHNhdmVUb2tlbihlKXtsb2NhbFN0b3JhZ2Uuc2V0SXRlbSgiYWNjZXNzX3Rva2VuIixlKX1zdGF0aWMgZ2V0VG9rZW4oKXtyZXR1cm4gbG9jYWxTdG9yYWdlLmdldEl0ZW0oImFjY2Vzc190b2tlbiIpfXN0YXRpYyByZW1vdmVUb2tlbigpe2xvY2FsU3RvcmFnZS5yZW1vdmVJdGVtKCJhY2Nlc3NfdG9rZW4iKX1zdGF0aWMgaXNBdXRoZW50aWNhdGVkKCl7cmV0dXJuIHRoaXMuZ2V0VG9rZW4oKSE9PW51bGx9fWV4cG9ydHtjIGFzIEF9Ow0KLy8jIHNvdXJjZU1hcHBpbmdVUkw9YXV0aC1COGlDRlRGei5qcy5tYXANCg==">
+  <script type="module" crossorigin src="/assets/menu-Dy3ZVqaW.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/translation-DWZXyav9.js">
+  <link rel="modulepreload" crossorigin href="/assets/product-F4haPes-.js">
+  <link rel="modulepreload" crossorigin href="/assets/client-CZJ3Ehlr-DJzEc6SN.js">
+  <link rel="stylesheet" crossorigin href="/assets/client-CZJ3Ehlr-CZJ3Ehlr.css">
+  <link rel="stylesheet" crossorigin href="/assets/menu-C1VO_sWb.css">
+  <link rel="stylesheet" crossorigin href="/assets/menu-BLvRlIlL-BLvRlIlL.css">
+</head>
+<body>
+    <div class="container-xl">
+         <header>
+            <nav>
+                <div class="logo">
+                    <a href="/index.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAA8CAYAAACQPx/OAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAxbSURBVHgB7VxPbBxXGf/erN20RRCXAKUlSiZNKZBKaaxKKITYHudQCQkaL+IA4hDnyAXbF/6Eg9cXUuCw6xPHxAekHpDWUZFAPcSzcVICEvU2SKYgQtZRKH+Sig2CKol35/X7vTdv583u7GbtbOyJtD9pvDPvvXnz5vv/3vvGRH300UcfffTRRx999B6CHjEU8z/yHEe8JGXg8eUhfoUhIjmka0WVzyt8UhHC8YMgKGVnflymRwiPBEOK+Wkm+BPTQogTfOnSxsDMEbkgqDFzflKhlCP1DCnmf5hjaZ+KtGDTqEgpF7Izp3OUYqSWIcX8910hMkVSZqmnYMbUx9OqLQ6lEMX8qUkhBlao98wAwOiVYv57E5RCpE5DNDPoDG0BhJCTx6dOL1CKkCqGsL+YYAdcpC1E2piyKYZ43mGXaJDNidzLl3C2HG7SO75/0adNQvsMmKkHdt4bRZV9ynBafMpAtw09z2NC1TjsFBMkydOlcX56YyMVFrkF37+Qow2C7frSNjADGOIoDlo5TClApptGnnfkEEnBBKNvUud5AAjque5et7J2/Rx1CR3aim10suLT3/rKCL3+m+USbTPua7I8b2SSNcJystLna58cUWbnW1UlktBmMt6zHO/GhIXhLZjt0vaCTdcH+7IzhSptAtqME/n+5Upr3VGPCTLLhwtiMa0W/QvLM0n9DHR+CDSjwYwqs+8kE3kxoWmJGVeKMU5KzKp9ui8yHm0/M4Ahx3mSJ6A0l1SpiUpjbLYXbKKHApvnYyi8ZvpkmE5+VV+P5pgWs7q11D+Cprm/KtOy5VmdfYgcKIadMDPWhzEQ9iUuUX1KN8jMmQf7/vJZfvgsP9wNn+pSF2Atm6Utwt31Gu0YjF55de1f9N8P7tDw859R5dB0fgfBJ3g/3y8tZ8P3PRP5zUH8juMsTuwQkiZI1LB+NqeZZepFmUSwyKZ/mmDapZikBOa3nRiqzigkrgimG1IhgyV+6DQOIeovxe+SFdoAeM6BiZ9LDwAQ+Wb1f3T1vffVbxIu/2mNCsVl+uXylUYZ2r/59l/o8rvX6ebt/5u+3JCA0YKlDIoRMxRc/FGMipjBwQzBB/r6HnEo/J1q3CXuZZVGCFqkDmivIRI2T2lHxfcvLUSDqLsd7nEjtRT3XWV1HGeMV20T6yC5K3/9O//epVdefiEm2QaoB0HBFIMDe56msYPPNdqjDm0Au48btyJX8bEnH1e/MYby+EMJb1otMEJXzzeaOjS5tLQMsz0dvn41pJW5dzG0LqwZWKWW1E54ExmifYfRDlmIaliCrDiANaQS3aMG70Zt1+eT+26Ez4d+/ftV78iL+5ggO1ravXF5tSG5SYDUG0LbWL2uzdA3Rg6qa5vIhvCq3OrbPD/+PCaYdLRQSirA7sceZGkNmBEW+gTtErU5bV0MrYKq8kEyyEdWp3aSEtDGZDlj0XnQNhQMgsdu41dLg4hsqZS5ttGGrF/jtgVEZe/euOn+4vzbLYQHQU3Z7k/sbNEO1NvMOPyFvfTJnR9pXN+4dVsdQBLhTRtdFjHJ1jRtdhTxzpKTsYRLHGLhQ/Bi5kwVUwOT5JcuDre+uzOhpw1K2xAcZbXGjBSV8NstKRHCjR7yVjmpXKN2SDu2+kqD82DGhdboIWTaEjVm9rJsiABptwFTZJBkqmD/DeCQD39+T4ywpo/SlatKYwxMG/v+JO0MoedFYn1Oj5eMjRtqCvHbTGaDalObKmhDIrOPA6BFTTc8wxb+9k7dDX8bnYYdNEUUTODICfpsS70kZmjUo5AYERtLEqQfaNaQq/94P3ZupDmpfv8zu9QvGNPcZuXqe7G+dzw2ENbdisoG27pR9U6QZBVJStt0x9uFIXEDWvgG4mtyQsyTMzCv60cLVvRVsZs57QejUI0eoDpw27SvomMp19eSKvX9DZu7aFQapgewpRTSC0duo5M/MVIP5sJ0NcMmOM7xzNXr/06st7VJwYqIlKCxdEPo+PcpsudYUrDpOToFP8pH3rIYkZaAfrL+H33IqYgWy7EVjXYMidQTT/b9inJsMW4irmb7GrVjpz64ZGascdQjOym0qYKUGMIf2Pt0o7r0x6vqF5JvGAWzBqbEbHyIm7cjpz28/9nGOaKt73z1S7EyaE3pyt9i96NPHG/+4c8tgiCaIkXQAQ5caYzIwClbZkz5xTNqSqDpwaFwfVyZqSSoQCHT4ti7YogaDKb6ITE16mXm7smmB7ImDCbtZUR2VjoT3tjoNSMlkGoQD9ATNU2UsYP7VaRkJNiEwc2w/QHuN9j/7C51r60BuB9MsQMFXP/8V7+NaU1jqDLzDrWBElKRGQ4jKxvGVwzD/xrNUvMUwZNBdWSeAj3NpNpGGwMKwuuQ7dixI3vPn3/LmKKIsEJrCx7Iq7wen3phDVuokQk4rjZ9h9oi/VcPvzj03DO71PWNm1XWDi29YJLRDki4iahgtqAptk8xZmbHYEb5DABmzPgWMMb0awCNBCNtXwQGQQhW1/4Z9i/LSQSzoZjCs3aE8o5zTzlEi1bN7SrUBdp5tIZkBIGDaCMM+4TbmPjZ9hGqp+xmyDBWXTZd5Sj8wyTIWscUwSQmmzNf96bu3LtXMBM8AMQEEzCrhlbcXa83brMJiDDX+BXb9oOwXzt8oHGN/sBgE8lBG3FoLckojURfw8/vVkLw8Y8+UXi9VPaZNF2v/IaM29SiZDMSV3v1jJLnC6Et5DWdfap8bERGd2qiRvccZaclclY3FYxVPaF5JVg/2X98cMDl9SPX+AYQD2YKk7k3frdKSQDBQWCjOZBoY+ZA5Fde/lxiKGuYZ89XksCBCW9W/ey+qwwPC22X35sIvMj+w1eOy9zI0UY0Qw3vGRtdiUxSCyphIltivZlPgOAgHjTEduJgAghuQmUbzYuGm4esTEyf3kfbiA5vgZg5mAgJiJnmhF2b6PCEMx6ujDZtNjEzeakgnJ1yNEbH9eKdrHx296fcL76wx7MlF+ffPjas7DwIbRx0O/SGGWrlOUfbjI4bVOHSc76FwG1m4wbj4yO8aChcnDtOzU9ydAbF/Cxvodau0fZs31qQPI8Ktj1fq6skB01gbWoQmzebqgfFuflTs+xLcrSNECLIHZ96bY62GalJA1osnHpYiXFdYPt9h0FqMhelrGe1099yVGGqKCVIDUNgu5kpM7TFkLJ2Mk15vqnK7c3OvHaWpfUkbRGQtZid+ekipQipS7bWTJEP23xV05jXC6TGqTdD52s5S91mr3QPWWYtzKb1c4TUMsTg3PwPOCRGyoxw6cHAWhEU0hDadkLqGQJAW3ioHs+BZjfOGFlh83Q2CO7MbzYrcSvxSDDEBnK5HId4oqqW+93wsHY4JXYvkebqMyPKr373dE8nsX300UcfffSRVvTMqau8VhJTvFSPzLxz5iuqRvY4CaQS+Ug80/siR6d4Xjod9VDjyWCG24p8VCa5XvIGt2MlTgQF378473mj16Jmdd8vXTppjQXbBWO8rz8TXqNPHyk3nccjXOensHXc0hUiL+bnNOJbugz2iPibQav0zZDt+jJTD38jmQKs1/epMpiA8rzvnxCVSJbPpA+BswEqFhZKbxNLMsoV3X0WKW1LFMK+6hEZQN6di2la8qcTEuqDZKah2LXFAzZ4+FXH24dT+yenUJkdur0VyQIcnv9bieiPuWiGUMvmAH0ZquNnONIKjP7JCyF4+B1mLQ9ZDazuHyepTkXJlxDP4eCIKNWWll8z7LUxcqITKKacFvLkIBhyurYA48TRDiu/qSCsKfvwhY0j4fwDcfYyDQya4LkJHzGAPddhxbmWTsW/NLFbKOK+7XGdZZ6gB6tZal/ANOYdCELw0qhiZXHbpPqvr366FCmK8KyO0OtZU7rbmOsH2HXb2hyGCbFsXYQvhCbZQYuWdVtxrp59EhD5DmSTt7zDi9oezxa0AlkGT7qKvcV3xuG30+oXFkuI51sd6lpKSNeptvJStLnX0llSf3wc13dnv3B2EjzeKowN3y+htUA3V59x8FaJcNP2eonkBTI5T6ycbSG15GF6Xcew8bRE4aolxs9yqZkcIVfGHa6zKqtHDa/ENtd5wwzidQHj6Ke3fgThBc5ce3Udd9hWZNT79wV0jsHiq3jySzy+XEeP/JvUVdYWrpY0syp5a3ynF+CQOE9xTT3M6nvr2XjXwqkBFp6WgE7TSlCu/Fg/Env0K68jz766KOPPvroIxEfArhLdpUjn+hWAAAAAElFTkSuQmCC" alt="Coffee">
+                            </span>
+                            <span class="text" data-translate="menu.filter.coffee">Coffee</span>
+                        </button>
+                        <button class="menu-btn action-link">
+                            <span class="icon">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKhSURBVHgB1ZJNSFRRFMfPvDdvvnQmZzIKLB2IJKJgKKpFoIEZuuqDhNYt3BTRKoIEC9RqYdRGjIw2RgtrsMUghLWQ0VEjfemQH6ONIzbjpOPMe877uu/jdt/ExFCrdnm4h8u5nP/vnnPuBdgRNsEu16aywkBff6gG/tVaW58xazmpIbHJv1ndyOJYcrN/NpFpLM0JBoO7fwfNzc32qfmVay0tLbQZvx+NBiLsfHhhNYXjyTROpNI4tvods4sJPBSemnw9FPHH1n50TUe/SjOL8V5TQ9XVNVYxNH7R+bT3nnnA2BynPRW+M+VuD3i9XqgkXuH1QbnbDT5vxcmjh2veLi8tNr169KAym906MTodDRSq+TASGU5scNzwePTIXJKPJ3kVcwhjsrBBXNAxXs9reCm9jT/Hkvjdx8hlUxf+xPZNzsTqKTMQBCHosNGe2kP+WSsYfl1TQUEaIB0DMjBIsgoqksHQNcCGAY4y3zFTp+mY1jQJrGagy8bYejoDBrYQKAZNtYFmtwGSC2MCVVVBVhCBKZDfFoHj8+aQ77vdroNfJiZ+ZTmddK5qf/UNXdcduqoUbtRURCAyiKIAkiiSnbggAM/lgONyavfjJ57U2krNlUsXugoQlmW1poZzDkmRz6oEopF2EFJAkUWQJakAEoU88DwP2a0MqIrsM5C0Z3lh7mooFMpZi0/9bSXSvXdf4KLkdAUklxNsNgYo2uwOA6kQEKlMlMx2tkmF4kt2PHizp2cgb2otpR+ou6PjALPLO+JwOv12MhOKpkkCmZEJQQgEUTIB8cjo2PHBwcFcUWf587c+bG+vxnbrc4axn6coupBhEIhh6KBrKKRjdL2trTNRqvkLUrSOu7dPMa6yespKu8irZuwWYG/daQvDf20/AZqddsNkAWMFAAAAAElFTkSuQmCC" alt="Tea">
+                            </span>
+                            <span class="text" data-translate="menu.filter.tea">Tea</span>
+                        </button>
+                        <button class="menu-btn action-link">
+                            <span class="icon">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKZSURBVHgBzVJLaxNRFP7unUnSNClpU2nTBxR8pULQgiCiBR+LLiouXBTcuhOLW1f+CxER0ZUvXGlBLVVcaFFbodqiQVuL1BSbNE2b5jWTmfvwzBilIC7ciAcOh5n7ne/7zrkX+F+C/enAunbl6NO3j0cnEqJ48uDI5aGhM+/+imRm4k53z427L7O5XN+D4R707z6AZNfAexYIXEr0dNzu6EhVtuL51o/J+9dbJp/cPC8K69OVz1/7wvkiUrc+ICaCcF0rJZ3q1VxmOb34cfLsb07Gxsaat0Wt01qLC1rqpFrNozT+DI7JENuzC53HBhEOh2AYHAZ1cM4RCjVNNQs90rzzSIZ9mX6YUGE9zrixz2Aep4bJGQwC8sawjClAudDShhb1H9KBOCHxKJEcPsGs7IvtSohF161DEQhuAdpZp1qkrIKpEpgsgwkLUgjSkIB04bYegmo7XO3qZ+3m+nI6azozrgkZ4GITRsgknEPC0lMiUU2L01DkDMykUUyqAXD7G6TWkaVPsts3vPr6XMZQVq+ha+C0B6W8tiCBo4RvoWyFNqLQPApQVTxCBAYEOas5VqfpkQTj+/MmD/WCB6DNGKlFfFU/NLmg1I2qpPRTKt+pvWPvqbyPjLQNlJTyDjSlIpDyQapB4qG1VjSmBYgytJ33/zlm9wJjTDfkUPHmV0QghQ1Rr0DW16DsHC2ZFuxswKnlwd0yDHj7ciDjg5BtiVWv2ScpZJ6XhL0GWV0hpQI5EaTqXakC8xwoAeEocHLFmQth2ZK3x5aFFvd+kRRX0huQm6RgQdO1am9uWppyVd2AmxVSLci6emMYcp6ZwaWQ2zSXPH6x8PPF+iTVanGW/E7Jem1WWLU5rt1Nh0XScRaYT42+quBfxHcgmnP+dFfSggAAAABJRU5ErkJggg==" alt="Dessert">
+                            </span>
+                            <span class="text" data-translate="menu.filter.dessert">Dessert</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="main-content">
+  <div class="coffee-content" id="coffee-content"></div>
+  <div class="load-more-container" id="coffee-load-more">
+    <button class="load-more-btn" onclick="loadMore('coffee')">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH0SURBVHgBtVXtUdtAEH17VgFuIOFcQfIzk0A4KiAdIFUAHSSpAKhApgKGCliPGYZ/2BVw0ADwF5CPvdNhJGyDwOjNaOzT3e7bD+07oGVQk0PG/PwOdORxK9HsEihGzKejDxMYY7rAZAfObcvyRv4ziGzYdOTJtJh3xcO+kPeZ+aYeEOADSOY7XzVwk1ycMCn8OT4eDhYEoSWTv3DFudhkzCdc7qjNeGSkZo3WUokwJ+VSHgyzRc7LCNkyDzOQy+BUbn7/2np5pjMbOe2C7jckvTEawtorq3u9IylZX/e+eDsd3w9UJd2uj0JKkjKfWbwTPhvQJPPZh95EVHpQpP7cayWZh7Kh05ojfDfOpfKzVydwtA2628CyoEkf4atLDmpRmPXVc7SAmIEfIli0gEggE0p4cyo/AoWWEQlEW5wf/c+BDGsuz2aFoJDyKIPPQtCq4rLOur52HSZ5SXh9El8XT+vnHpDbE+YtLA0RP+9rhgCJyC6ZZbIotQymOmRTgqDnUUuM+aHxTgTpnmrZ891QU9NSFVdu4Tq57n0d+3UD30+RH8q98I8HJ0fVPVpsoMKFI9L9f5G6luWUvklZfOTzhPKNK/NBjNUOvHiRs0IYp52075fMjki8NFQl+9WyNCKok3lJTr7JvazLN8oK+bjJpd86HgE6TtYotN/IUwAAAABJRU5ErkJggg==" alt="Load more">
+    </button>
+  </div>
+
+  <div class="tea-content" id="tea-content" style="display:none"></div>
+  <div class="load-more-container" id="tea-load-more" style="display:none">
+    <button class="load-more-btn" onclick="loadMore('tea')">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH0SURBVHgBtVXtUdtAEH17VgFuIOFcQfIzk0A4KiAdIFUAHSSpAKhApgKGCliPGYZ/2BVw0ADwF5CPvdNhJGyDwOjNaOzT3e7bD+07oGVQk0PG/PwOdORxK9HsEihGzKejDxMYY7rAZAfObcvyRv4ziGzYdOTJtJh3xcO+kPeZ+aYeEOADSOY7XzVwk1ycMCn8OT4eDhYEoSWTv3DFudhkzCdc7qjNeGSkZo3WUokwJ+VSHgyzRc7LCNkyDzOQy+BUbn7/2np5pjMbOe2C7jckvTEawtorq3u9IylZX/e+eDsd3w9UJd2uj0JKkjKfWbwTPhvQJPPZh95EVHpQpP7cayWZh7Kh05ojfDfOpfKzVydwtA2628CyoEkf4atLDmpRmPXVc7SAmIEfIli0gEggE0p4cyo/AoWWEQlEW5wf/c+BDGsuz2aFoJDyKIPPQtCq4rLOur52HSZ5SXh9El8XT+vnHpDbE+YtLA0RP+9rhgCJyC6ZZbIotQymOmRTgqDnUUuM+aHxTgTpnmrZ891QU9NSFVdu4Tq57n0d+3UD30+RH8q98I8HJ0fVPVpsoMKFI9L9f5G6luWUvklZfOTzhPKNK/NBjNUOvHiRs0IYp52075fMjki8NFQl+9WyNCKok3lJTr7JvazLN8oK+bjJpd86HgE6TtYotN/IUwAAAABJRU5ErkJggg==" alt="Load more">
+    </button>
+  </div>
+
+  <div class="dessert-content" id="dessert-content" style="display:none"></div>
+  <div class="load-more-container" id="dessert-load-more" style="display:none">
+    <button class="load-more-btn" onclick="loadMore('dessert')">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH0SURBVHgBtVXtUdtAEH17VgFuIOFcQfIzk0A4KiAdIFUAHSSpAKhApgKGCliPGYZ/2BVw0ADwF5CPvdNhJGyDwOjNaOzT3e7bD+07oGVQk0PG/PwOdORxK9HsEihGzKejDxMYY7rAZAfObcvyRv4ziGzYdOTJtJh3xcO+kPeZ+aYeEOADSOY7XzVwk1ycMCn8OT4eDhYEoSWTv3DFudhkzCdc7qjNeGSkZo3WUokwJ+VSHgyzRc7LCNkyDzOQy+BUbn7/2np5pjMbOe2C7jckvTEawtorq3u9IylZX/e+eDsd3w9UJd2uj0JKkjKfWbwTPhvQJPPZh95EVHpQpP7cayWZh7Kh05ojfDfOpfKzVydwtA2628CyoEkf4atLDmpRmPXVc7SAmIEfIli0gEggE0p4cyo/AoWWEQlEW5wf/c+BDGsuz2aFoJDyKIPPQtCq4rLOur52HSZ5SXh9El8XT+vnHpDbE+YtLA0RP+9rhgCJyC6ZZbIotQymOmRTgqDnUUuM+aHxTgTpnmrZ891QU9NSFVdu4Tq57n0d+3UD30+RH8q98I8HJ0fVPVpsoMKFI9L9f5G6luWUvklZfOTzhPKNK/NBjNUOvHiRs0IYp52075fMjki8NFQl+9WyNCKok3lJTr7JvazLN8oK+bjJpd86HgE6TtYotN/IUwAAAABJRU5ErkJggg==" alt="Load more">
+    </button>
+  </div>
+</div>
+            </section>
+        </main>
+
+        <footer>
+            <section id="Footer" class="footer-content">
+                    <div class="footer-left">
+                        <h2 class="heading-2">Sip, Savor, Smile. <span class="accent">It’s coffee time!</span></h2>
+                        <div class="socials">
+                            <div class="footer-social twitter">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path
+                                    d="M23 3.01006C23 3.01006 20.9821 4.20217 19.86 4.54006C19.2577 3.84757 18.4573 3.35675 17.567 3.13398C16.6767 2.91122 15.7395 2.96725 14.8821 3.29451C14.0247 3.62177 13.2884 4.20446 12.773 4.96377C12.2575 5.72309 11.9877 6.62239 12 7.54006V8.54006C10.2426 8.58562 8.50127 8.19587 6.93101 7.4055C5.36074 6.61513 4.01032 5.44869 3 4.01006C3 4.01006 -1 13.0101 8 17.0101C5.94053 18.408 3.48716 19.109 1 19.0101C10 24.0101 21 19.0101 21 7.51006C20.9991 7.23151 20.9723 6.95365 20.92 6.68006C21.9406 5.67355 23 3.01006 23 3.01006Z"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                </svg>
+                            </div>
+
+                            <div class="footer-social instagram">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path
+                                    d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z"
+                                    stroke="currentColor"
+                                />
+                                <path
+                                    d="M17.5 6.51L17.51 6.49889"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                </svg>
+                            </div>
+
+                            <div class="footer-social facebook">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+                                <path
+                                    d="M17 2H14C12.6739 2 11.4021 2.52678 10.4645 3.46447C9.52678 4.40215 9 5.67392 9 7V10H6V14H9V22H13V14H16L17 10H13V7C13 6.73478 13.1054 6.48043 13.2929 6.29289C13.4804 6.10536 13.7348 6 14 6H17V2Z"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-right">
+                        <h3>Contact us</h3>
+                        <div class="footer-right-info">
+                            <div class="footer-location">
+                                <a href="https://maps.google.com/?q=8558+Green+Rd+LA" class="footer-link">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHJSURBVHgBlVVLUsJAEO1pNZY7bwAstbQMGylXyg28gXoC9QSGE4g34Ah4AldWDJvwCeUy4AVgC5FpuwMIAwbGVzXFMPP60d8BwAJxGB7KsuGqTJGOf6WUulGgrvnrXGxIiuqEVCkcXfSsBfudRhUU3YsArxogpcZKo0tAV7zNA0Eld1rytgouiVV14lQKxeLQ8JxDR2d8z4IeIFRzx6VHyAwz8m/7UUD9bvAEWyAc4cbt4HoTKWZSDJb4ihpvvW4QLp/hwruGy2HkeevBmufvbvzp51fPCXVdEbhyvyYImlIDDd8tU8y/RdgNcYLxanha0etUZPdsXRB12hr7eDAAIwRckBEuYQsWggQ9+RhNRgXDi0S/EEBTluwN6wTd6Q+p3p/qXJCBJBosIdzVIqLBUFCVxpUpgS2QfM6a3DMllknStHvjUE712CmuNrXBc5jHecidlAqZHoqAJn0n7bOzlzxDBnYcvmMO57QMNui3Ph7SiekE3todn9lOk2kYBbXUMApu5mdxezaaUZDpffbzleYz4YqTy2ko81MzlAZnk2bu5Lz4b8GF6Fhm9fc95Bcos1gC3CSYFmma+OFUTJc3iVkjDv287V/AD8pAAmILCclaAAAAAElFTkSuQmCC" alt="Location pin icon">
+                                <span>8558 Green Rd., LA</span>
+                                </a>
+                            </div>
+
+                            <div class="footer-phone">
+                                <a href="tel:+16035550123" class="footer-link">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH3SURBVHgBnVRNbtNQEJ6ZF5cuwwXAWSKlwtkAEQvSE7Q3SHuCcgOnJ6CcIOYEqCdoWKAQNonUlC7tiANgNpAE5Q0zz2nktunPyyfZ782b58/zj1BCOhxWAabVQtrOa41GDp5AR3TZD83CdBm4VVZatru1nWYPPFDRl7EmFrIIiN8DYmHVAk4IaU92PfDF5GKQZhffPl87Gw8+yPOrCMPjQfoSv0fAGJYV4u6pLFV6MmuDBxwhC6GQRtesQeNcR4YMPOAIrbVfnBDM90omhroseDEBDzjCZSZzBDxYKQy8dLr62xF4gFY7hBMtGy0hFWWva75RUhR2vvXRWWkxdoSWP4FLyjyGTSHlE0upcHrebzm5KB2enA86j+XAsqDuSWKGempJuuRFMxPCRFRtRk6Y+Bim2zkEf0JxLiJDbKdbp+UWxZt/SMdfI4LKmWjyFalYLkHtiFo/vBVT9zMJkSYX15m9jjQd9kMK6MhdMDAKOOjN7N+nBoKj5QwIAwrCtYSF+47gTC+KdcfPd1537rw77h8QUFcJ6a5LtUYzs//srtRmIpbG2u+Ty0H7oTKi+5RK+qz+6pAIW8ycyQRKJGk6SLpXlQAuAhXXBLMZ/kbwgMZ2GbN9WCUHpZM4krMkrL859CIs4+eP7++s5X2do4jY08bYZMI/iP/4nPOkzgjosAAAAABJRU5ErkJggg==" alt="Phone icon">
+                                <span>+1 (603) 555-0123</span>
+                                </a>
+                            </div>
+
+                            <div class="footer-event">
+                                <a href="/contact" class="footer-link">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHjSURBVHgBnVVLUsJAEO1pELZcQCFLFatgoZa6kRMAJyDcgJvIDYATCCdAFxagCyjEKncBLiBbfjN2T8jwkViBrpqk0jP9pmf6vQ5AAHO63RiPIGuFHwBGpwUhMadApcjlgU0EiJ4KqWr8/LYWCND5bD0iYgUUJGh2SO86oBrqSSkS9MzR0HNSLfJW8qHnC+j0W7YGAxgiCvv04uYV9tj46yOrlCxrYAA7nlxnawCdwVsKIdwlV0/OTzJWOj3x5kaDdkmCBCt5X966lpN5E+hKpJIZ6+ruhf3oLUARfubMdsHcXTHLY9PHa3itexqseEVDN7uWzXcmBJZ2wf4zDapkkWO5iAYwBCH+GJ5dXjfgQNNHpQIxIwzgihp1ONaICSsMCLtnn8UMNXyM+JcaD96bm74lLBq6UBwrhSZ/GIIksJQNFdIn2fJTMdTegNGg80PjCY40jmUMvQk/WE7gKuA4E8AS7RnApVwy0xMsOzjQnH4npykHoupir9N2+EvOIumgXNRqicy6fLUkP8tkyGYISnIK0qqM9ChGwiLv+Q0gE5T0WmRt8q7j73bWF4w7Emfmcs/e7Dh/25fbJFjX+9sXFUC3Np+OJHyzoFYmUBSY0LDRYLmaAqEup9HaIbrfBj/gF/ALjIfyS6TnkMYAAAAASUVORK5CYII=" alt="Clock icon">
+                                <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </footer>
+    </div>
+    
+    <div id="error-notification" class="error-notification">
+        <div class="error-content">
+            <span class="error-icon">⚠️</span>
+            <span class="error-message">Something went wrong. Please, try again</span>
+            <button class="error-close" onclick="hideErrorNotification()">&times;</button>
+        </div>
+    </div>
+    
+    <div id="coffee-tea-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close-icon" onclick="closeModal('coffee-tea-modal')">&times;</button>
+            
+            <div class="modal-loader" id="coffee-tea-loader">
+                <div class="loader-spinner"></div>
+                <p>Loading product details...</p>
+            </div>
+            
+            <div class="modal-image">
+                <img id="coffee-tea-modal-img" src="" alt="">
+            </div>
+            
+            <div class="modal-details">
+                <h3 id="coffee-tea-modal-title" class="modal-title burger-link"></h3>
+                <p id="coffee-tea-modal-description" class="modal-description body-medium"></p>
+                
+                <div class="modal-section">
+                    <h4 class="action-link">Size</h4>
+                    <div class="modal-options">
+                        <button class="modal-btn selected" data-price="0" data-size="S" data-tooltip="+$0.00">200 ml</button>
+                        <button class="modal-btn" data-price="1" data-size="M" data-tooltip="+$1.00">300 ml</button>
+                        <button class="modal-btn" data-price="2" data-size="L" data-tooltip="+$2.00">400 ml</button>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="action-link">Additives</h4>
+                    <div class="modal-options">
+                        <button class="modal-btn" data-price="0.5" data-number="1" data-tooltip="+$0.50">Sugar</button>
+                        <button class="modal-btn" data-price="0.5" data-number="2" data-tooltip="+$0.50">Cinnamon</button>
+                        <button class="modal-btn" data-price="0.75" data-number="3" data-tooltip="+$0.75">Syrup</button>
+                    </div>
+                </div>
+                
+                <div class="modal-total">
+                    <span class="heading-3">Total:</span>
+                    <span class="heading-3">$<span id="coffee-tea-total-price"></span></span>
+                </div>
+                <p class="modal-disclaimer caption">
+                    <span class="info-icon">ℹ</span>
+                    The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+                </p>
+                <button class="modal-add-to-cart-btn action-link">Add to cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="dessert-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close-icon" onclick="closeModal('dessert-modal')">&times;</button>
+            
+            <div class="modal-loader" id="dessert-loader">
+                <div class="loader-spinner"></div>
+                <p>Loading product details...</p>
+            </div>
+            
+            <div class="modal-image">
+                <img id="dessert-modal-img" src="" alt="">
+            </div>
+            
+            <div class="modal-details">
+                <h3 id="dessert-modal-title" class="modal-title burger-link"></h3>
+                <p id="dessert-modal-description" class="modal-description body-medium"></p>
+                
+                <div class="modal-section">
+                    <h4 class="action-link">Size</h4>
+                    <div class="modal-options">
+                        <button class="modal-btn selected" data-price="0" data-size="S" data-tooltip="+$0.00">50 g</button>
+                        <button class="modal-btn" data-price="1" data-size="M" data-tooltip="+$1.00">100 g</button>
+                        <button class="modal-btn" data-price="2" data-size="L" data-tooltip="+$2.00">200 g</button>
+                    </div>
+                </div>
+                
+                <div class="modal-section">
+                    <h4 class="action-link">Additives</h4>
+                    <div class="modal-options">
+                        <button class="modal-btn" data-price="0.5" data-number="1" data-tooltip="+$0.50">Berries</button>
+                        <button class="modal-btn" data-price="0.5" data-number="2" data-tooltip="+$0.50">Nuts</button>
+                        <button class="modal-btn" data-price="0.75" data-number="3" data-tooltip="+$0.75">Jam</button>
+                    </div>
+                </div>
+                
+                <div class="modal-total">
+                    <span class="heading-3">Total:</span>
+                    <span class="heading-3">$<span id="dessert-total-price"></span></span>
+                </div>
+                <p class="modal-disclaimer caption">
+                    <span class="info-icon">ℹ</span>
+                    The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite dessert with up to 20% discount.
+                </p>
+                <button class="modal-add-to-cart-btn action-link">Add to cart</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const coffeeBtn = document.querySelectorAll('.menu-btn')[0];
+        const teaBtn = document.querySelectorAll('.menu-btn')[1];
+        const dessertBtn = document.querySelectorAll('.menu-btn')[2];
+        
+        const coffeeContent = document.getElementById('coffee-content');
+        const teaContent = document.getElementById('tea-content');
+        const dessertContent = document.getElementById('dessert-content');
+        
+        function switchToCoffee() {
+            coffeeBtn.classList.add('active');
+            teaBtn.classList.remove('active');
+            dessertBtn.classList.remove('active');
+            
+            coffeeContent.style.display = 'grid';
+            teaContent.style.display = 'none';
+            dessertContent.style.display = 'none';
+            
+            // Reset all categories to original state
+            resetCategoryState('coffee');
+            resetCategoryState('tea');
+            resetCategoryState('dessert');
+            
+            // Show only coffee load more button, hide others
+            showLoadMoreButton('coffee');
+            hideLoadMoreButton('tea');
+            hideLoadMoreButton('dessert');
+        }
+        
+        function switchToTea() {
+            teaBtn.classList.add('active');
+            coffeeBtn.classList.remove('active');
+            dessertBtn.classList.remove('active');
+            
+            teaContent.style.display = 'grid';
+            coffeeContent.style.display = 'none';
+            dessertContent.style.display = 'none';
+            
+            // Reset all categories to original state
+            resetCategoryState('coffee');
+            resetCategoryState('tea');
+            resetCategoryState('dessert');
+            
+            // Show only tea load more button, hide others
+            showLoadMoreButton('tea');
+            hideLoadMoreButton('coffee');
+            hideLoadMoreButton('dessert');
+        }
+        
+        function switchToDessert() {
+            dessertBtn.classList.add('active');
+            coffeeBtn.classList.remove('active');
+            teaBtn.classList.remove('active');
+            
+            coffeeContent.style.display = 'none';
+            teaContent.style.display = 'none';
+            dessertContent.style.display = 'grid';
+            
+            // Reset all categories to original state
+            resetCategoryState('coffee');
+            resetCategoryState('tea');
+            resetCategoryState('dessert');
+            
+            // Show only dessert load more button, hide others
+            showLoadMoreButton('dessert');
+            hideLoadMoreButton('coffee');
+            hideLoadMoreButton('tea');
+        }
+        
+        coffeeBtn.addEventListener('click', switchToCoffee);
+        teaBtn.addEventListener('click', switchToTea);
+        dessertBtn.addEventListener('click', switchToDessert);
+        
+        // Initialize with coffee active (default state)
+        switchToCoffee();
+        
+        // Modal functionality is now handled by TypeScript
+
+        // Helper functions for load more button visibility
+        function showLoadMoreButton(category) {
+            const loadMoreBtn = document.getElementById(`${category}-load-more`);
+            const content = document.getElementById(`${category}-content`);
+            
+            if (loadMoreBtn && content) {
+                const allItems = content.querySelectorAll('.menu-item');
+                // Only show if there are more than 4 items (so there are hidden items)
+                if (allItems.length > 4) {
+                    loadMoreBtn.style.setProperty('display', 'flex', 'important');
+                } else {
+                    loadMoreBtn.style.setProperty('display', 'none', 'important');
+                }
+            }
+        }
+
+        function hideLoadMoreButton(category) {
+            const loadMoreBtn = document.getElementById(`${category}-load-more`);
+            if (loadMoreBtn) {
+                loadMoreBtn.style.setProperty('display', 'none', 'important');
+            }
+        }
+
+        // Reset category to original state (re-add hidden class to items 5+)
+        function resetCategoryState(category) {
+            const content = document.getElementById(`${category}-content`);
+            
+            if (content) {
+                // Find items that should be hidden (items 5+)
+                const allItems = content.querySelectorAll('.menu-item');
+                allItems.forEach((item, index) => {
+                    // Items 5+ (index 4+) should have hidden class
+                    if (index >= 4) {
+                        item.classList.add('hidden');
+                    }
+                });
+            }
+        }
+
+        // Load more functionality
+        function loadMore(category) {
+            const content = document.getElementById(`${category}-content`);
+            const loadMoreBtn = document.getElementById(`${category}-load-more`);
+            
+            if (content) {
+                // Show all hidden items by removing the hidden class
+                const hiddenItems = content.querySelectorAll('.menu-item.hidden');
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden');
+                });
+                
+                // Hide the load more button
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = 'none';
+                }
+            }
+        }
+    </script>
+    <script>
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            const body = document.body;
+            
+            mobileNav.classList.toggle('active');
+            body.classList.toggle('mobile-nav-open');
+        }
+    </script>
+
+
+</body>
